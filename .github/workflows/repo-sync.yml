@@ -20,38 +20,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync TaskAction
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/1217079729/TaskAction.git"
-          source_branch: "master"
-          destination_branch: "master"
-          github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
-          
       - name: sync jdCode	
         uses: repo-sync/github-sync@v2	
         if: env.PAT	
         with:	
-          source_repo: "https://github.com/1217079729/TaskAction.git"	
-          source_branch: "jd_code"	
+          source_repo: "https://gitee.com/lxk0301/jd_scripts.git"	
+          source_branch: "master"	
           destination_branch: "jd_code"	
-          github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
-
-      - name: sync jdCode2
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/1217079729/TaskAction.git"
-          source_branch: "jd_code2"
-          destination_branch: "jd_code2"
-          github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
-
-      - name: sync selfTask
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/pxylen/SelfTask.git"
-          source_branch: "main"
-          destination_branch: "selfTask"
           github_token: ${{ secrets.PAT || github.event.client_payload.PAT }}
