@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         if: env.JD_COOKIE
         run: |
-          git clone https://github.com/1217079729/TaskAction.git ~/TaskAction
+          git clone https://github.com/Sladewide/TaskAction.git ~/TaskAction
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.JD_COOKIE
@@ -48,7 +48,8 @@ jobs:
           node jd_bean_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【京喜签到】'
         run: |
@@ -56,7 +57,9 @@ jobs:
           node jx_sign.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+
 
       - name: '运行 【京喜签到】'
         run: |
@@ -64,8 +67,8 @@ jobs:
           node jingxi.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【京小超兑换奖品】'
         run: |
@@ -73,7 +76,8 @@ jobs:
           node jd_blueCoin.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【摇京豆】'
         run: |
@@ -81,7 +85,8 @@ jobs:
           node jd_club_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【领京豆额外奖励】'
         run: |
@@ -89,7 +94,8 @@ jobs:
           node jd_bean_home.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【京东全民开红包】'
@@ -98,7 +104,8 @@ jobs:
           node jd_redPacket.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【进店领豆】'
@@ -107,7 +114,8 @@ jobs:
           node jd_shop.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【签到领现金】'
@@ -116,8 +124,8 @@ jobs:
           node jd_cash.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【京东汽车】'
         run: |
@@ -125,7 +133,8 @@ jobs:
           node jd_car.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【京东汽车】'
         run: |
@@ -133,15 +142,17 @@ jobs:
           node jd_car_exchange.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          
       - name: '运行 【东东小窝】'
         run: |
           cd ~/TaskAction
           node jd_small_home.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【疯狂的joy】'
@@ -150,7 +161,8 @@ jobs:
           node jd_crazy_joy.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【京东排行榜】'
@@ -159,7 +171,8 @@ jobs:
           node jd_rankingList.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【金融养猪】'
@@ -168,7 +181,8 @@ jobs:
           node jd_pigPet.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【十元街】'
@@ -177,7 +191,8 @@ jobs:
           node jd_syj.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【京东快递】'
@@ -186,7 +201,8 @@ jobs:
           node jd_kd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【京东赚赚】'
@@ -195,7 +211,8 @@ jobs:
           node jd_jdzz.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【盲盒抽京豆】'
@@ -204,7 +221,8 @@ jobs:
           node jd_sgmh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
       - name: '运行 【京东秒秒币】'
@@ -213,7 +231,8 @@ jobs:
           node jd_ms.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【京东超级盒子】'
         run: |
@@ -221,7 +240,8 @@ jobs:
           node jd_super_box.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【小鸽有礼】'
         run: |
@@ -229,7 +249,8 @@ jobs:
           node jd_xg.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
       - name: '运行 【小鸽有礼2】'
         run: |
@@ -237,8 +258,8 @@ jobs:
           node jd_xgyl.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
  
 
       - name: '运行 【京东抽奖机】'
@@ -247,6 +268,7 @@ jobs:
           node jd_lotteryMachine.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
 
 
